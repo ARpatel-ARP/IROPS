@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 
 import skillRoutes from "./routes/skillRoutes.js";
+import employeeRoutes from "./routes/employeeRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 const app = express();
 
@@ -12,6 +14,8 @@ app.use(express.json());
 
 // API routes
 app.use("/api/skills", skillRoutes);
+app.use("/api/employees", employeeRoutes);
+app.use("/api/tasks", taskRoutes);
 
 // Root route
 app.get("/", (req, res) => {
