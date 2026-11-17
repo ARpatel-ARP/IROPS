@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-
+import matchingRoutes from "./routes/matchingRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
@@ -16,6 +16,7 @@ app.use(express.json());
 app.use("/api/skills", skillRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/matching", matchingRoutes);
 
 // Root route
 app.get("/", (req, res) => {
