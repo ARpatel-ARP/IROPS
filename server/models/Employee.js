@@ -40,6 +40,10 @@ const employeeSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    passwordHash: {
+      type: String,
+      select: false,
+    },
 
     department: {
       type: String,
