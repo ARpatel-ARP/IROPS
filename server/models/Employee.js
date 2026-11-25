@@ -56,6 +56,11 @@ const employeeSchema = new mongoose.Schema(
       required: [true, "Team is required"],
       trim: true,
     },
+    teamManager: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Employee",
+      default: null,
+    },
 
     jobTitle: {
       type: String,
@@ -72,7 +77,7 @@ const employeeSchema = new mongoose.Schema(
       type: [
         {
           type: String,
-          enum: ["EMPLOYEE", "TEAM_MANAGER", "TASK_MANAGER"],
+          enum: ["EMPLOYEE", "TEAM_MANAGER", "TASK_MANAGER", "ADMIN"],
         },
       ],
       default: ["EMPLOYEE"],

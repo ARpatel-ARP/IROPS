@@ -6,6 +6,7 @@ import skillRoutes from "./routes/skillRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import interestRoutes from "./routes/interestRoutes.js"
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use("/api/employees", employeeRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/matching", matchingRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/interests", interestRoutes);
 
 // Root route
 app.get("/", (req, res) => {
